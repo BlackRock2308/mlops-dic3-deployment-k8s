@@ -15,7 +15,7 @@ spec:
         app: mlops
     spec:
       containers:
-        - image: blackrock30/revenue-prediction:2.0
+        - image: blackrock30/revenue-prediction:1.2
           name: mlops
           ports:
             - containerPort: 5000
