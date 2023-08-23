@@ -20,13 +20,6 @@ spec:
           ports:
             - containerPort: 5000
               name: revenue-prediction
-          resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-          limits:
-            cpu: 100m
-            memory: 100Mi
 
 ---
 apiVersion: v1
