@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - image: blackrock30/revenue-prediction:1.2
-          name: django
+          name: mlops
           ports:
             - containerPort: 5000
-              name: revenue-prediction
+              name: mlops
 
 ---
 apiVersion: v1
