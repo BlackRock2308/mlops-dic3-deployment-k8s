@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-app
+  labels:
+    app: mlops
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mlops
+  template:
+    metadata:
+      labels:
+        app: mlops
+    spec:
+      containers:
+        - image: blackrock30/revenue-prediction:1.2
+          name: django
+          ports:
+            - containerPort: 5000
+              name: revenue-prediction
+          resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlops
+  labels:
+    app: mlops
+spec:
+  type: LoadBalancer
+  selector:
+    app: mlops
+  ports:
+    - port: 5000
+      targetPort: 5000
