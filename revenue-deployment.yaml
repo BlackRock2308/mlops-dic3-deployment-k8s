@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mlops
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mlops
@@ -15,7 +15,7 @@ spec:
         app: mlops
     spec:
       containers:
-        - image: blackrock30/revenue-prediction:1.2
+        - image: blackrock30/revenue-prediction:2.0
           name: mlops
           ports:
             - containerPort: 5000
