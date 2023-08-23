@@ -20,7 +20,7 @@ spec:
           ports:
             - containerPort: 5000
               name: mlops
-      restartPolicy: Always
+          imagePullPolicy: Always
 
 ---
 apiVersion: v1
